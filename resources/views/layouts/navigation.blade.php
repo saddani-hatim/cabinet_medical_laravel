@@ -7,7 +7,7 @@
                 <div class="w-10 h-10 medical-gradient rounded-xl flex items-center justify-center text-white shadow-lg">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
                 </div>
-                <span class="text-lg font-black tracking-tight text-slate-800 uppercase">{{ config('app.name', 'Cabinet') }}</span>
+                <span class="text-lg font-black tracking-tight text-slate-800 uppercase">{{ config('APP_NAME', 'Cabinet') }}</span>
             </div>
 
             <div class="flex-1"></div>
@@ -48,10 +48,10 @@
                             {{ __('Language') }}
                         </div>
                         <x-dropdown-link :href="route('locale.switch', 'fr')" class="text-sm font-bold text-slate-600 py-2.5 hover:bg-slate-50">
-                            🇫🇷 Français
+                             Français
                         </x-dropdown-link>
                         <x-dropdown-link :href="route('locale.switch', 'en')" class="text-sm font-bold text-slate-600 py-2.5 hover:bg-slate-50">
-                            🇺🇸 English
+                             English
                         </x-dropdown-link>
 
                         <div class="border-t border-slate-50"></div>

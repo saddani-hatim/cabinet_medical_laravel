@@ -5,13 +5,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+        <title>{{ config('APP_NAME', 'Cabinet Médical') }}</title>
 
-        
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=outfit:400,500,600,700,800&display=swap" rel="stylesheet" />
 
-        
         <script src="https://cdn.tailwindcss.com"></script>
         <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
@@ -23,12 +21,23 @@
                             sans: ['Outfit', 'sans-serif'],
                         },
                         colors: {
-                            primary: {
-                                50: '#eff6ff',
-                                100: '#dbeafe',
-                                500: '#3b82f6',
-                                600: '#2563eb',
-                                700: '#1d4ed8',
+                            brand: {
+                                50: '#fff7ed',
+                                100: '#ffedd5',
+                                200: '#fed7aa',
+                                400: '#f59e0b',
+                                500: '#ea580c',
+                                600: '#c2410c',
+                                700: '#9a3412',
+                            },
+                            mint: {
+                                50: '#ecfdf5',
+                                100: '#d1fae5',
+                                200: '#a7f3d0',
+                                400: '#34d399',
+                                500: '#10b981',
+                                600: '#059669',
+                                700: '#047857',
                             },
                         }
                     }
@@ -39,58 +48,58 @@
             [x-cloak] { display: none !important; }
             
             .premium-sidebar {
-                background: rgba(255, 255, 255, 0.8);
-                backdrop-filter: blur(20px);
-                -webkit-backdrop-filter: blur(20px);
+                background: rgba(255, 255, 255, 0.88);
+                backdrop-filter: blur(24px);
+                -webkit-backdrop-filter: blur(24px);
             }
             
             .medical-gradient {
-                background: linear-gradient(135deg, #4f46e5 0%, #06b6d4 100%);
+                background: linear-gradient(135deg, #fb923c 0%, #10b981 100%);
             }
             
             .sidebar-item-active {
-                background: linear-gradient(90deg, rgba(79, 70, 229, 0.1) 0%, rgba(6, 182, 212, 0.05) 100%);
-                border-right: 3px solid #4f46e5;
-                color: #4f46e5 !important;
+                background: linear-gradient(90deg, rgba(251, 146, 60, 0.12) 0%, rgba(16, 185, 129, 0.08) 100%);
+                border-right: 3px solid #fb923c;
+                color: #c2410c !important;
             }
             
             .premium-card {
                 background: white;
-                border-radius: 1.25rem;
-                box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.04), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+                border-radius: 1.5rem;
+                box-shadow: 0 18px 40px -18px rgba(15, 23, 42, 0.15), 0 6px 16px -12px rgba(15, 23, 42, 0.08);
                 border: 1px solid rgba(241, 245, 249, 1);
-                transition: transform 0.2s ease, box-shadow 0.2s ease;
+                transition: transform 0.25s ease, box-shadow 0.25s ease;
             }
             
             .premium-card:hover {
-                transform: translateY(-2px);
-                box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+                transform: translateY(-3px);
+                box-shadow: 0 25px 45px -20px rgba(15, 23, 42, 0.18), 0 10px 22px -14px rgba(15, 23, 42, 0.1);
             }
 
             .glass-header {
-                background: rgba(255, 255, 255, 0.7);
-                backdrop-filter: blur(12px);
-                border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+                background: rgba(255, 255, 255, 0.78);
+                backdrop-filter: blur(16px);
+                border-bottom: 1px solid rgba(251, 146, 60, 0.12);
             }
         </style>
     </head>
-    <body class="font-sans antialiased text-slate-900 bg-[#f8fafc]">
-        <div class="fixed inset-0 -z-10 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-50 via-white to-indigo-50/30"></div>
+    <body class="font-sans antialiased text-slate-900 bg-[#fff7ed]">
+        <div class="fixed inset-0 -z-10 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-orange-50 via-white to-emerald-50/40"></div>
         <div class="flex min-h-screen overflow-hidden">
             
             <aside class="hidden lg:flex flex-col w-72 premium-sidebar border-r border-slate-200/60 shadow-xl shadow-slate-200/20 z-20">
                 <div class="p-8 flex items-center gap-4">
-                    <div class="w-12 h-12 medical-gradient rounded-2xl flex items-center justify-center text-white shadow-lg shadow-indigo-200">
+                    <div class="w-12 h-12 medical-gradient rounded-2xl flex items-center justify-center text-white shadow-lg shadow-orange-200/80">
                         <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
                     </div>
                     <div class="flex flex-col">
-                        <span class="text-xl font-black tracking-tight text-slate-800 uppercase">{{ config('app.name', 'Cabinet') }}</span>
-                        <span class="text-[10px] font-bold text-indigo-500 uppercase tracking-[0.2em]">Management System</span>
+                        <span class="text-xl font-black tracking-tight text-slate-900 uppercase">{{ config('APP_NAME', 'Cabinet') }}</span>
+                        <span class="text-[10px] font-bold text-amber-600 uppercase tracking-[0.2em]">Management System</span>
                     </div>
                 </div>
 
                 <nav class="flex-1 px-4 space-y-1.5 mt-4">
-                    <a href="/" class="flex items-center gap-3 px-4 py-3 rounded-xl transition-all hover:bg-slate-100 text-slate-400 font-bold text-sm mb-6 group">
+                    <a href="/" class="flex items-center gap-3 px-4 py-3 rounded-xl transition-all hover:bg-slate-100 text-slate-500 font-bold text-sm mb-6 group">
                         <svg class="w-5 h-5 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
                         {{ __('Back to Website') }}
                     </a>
@@ -127,10 +136,10 @@
 
                 <div class="p-6 border-t border-slate-100">
                     <div class="flex items-center gap-3 p-4 rounded-2xl bg-white border border-slate-100 shadow-sm">
-                        <img class="w-10 h-10 rounded-xl border-2 border-slate-50 shadow-sm" src="https://ui-avatars.com/api/?name={{ urlencode(Auth::user()->name) }}&background=6366f1&color=fff" alt="Avatar">
+                        <img class="w-10 h-10 rounded-xl border-2 border-slate-50 shadow-sm" src="https://ui-avatars.com/api/?name={{ urlencode(Auth::user()->name) }}&background=f97316&color=fff" alt="Avatar">
                         <div class="overflow-hidden">
-                            <span class="block text-sm font-black text-slate-800 truncate">{{ Auth::user()->name }}</span>
-                            <span class="block text-[10px] font-bold text-slate-400 truncate uppercase">{{ Auth::user()->role }}</span>
+                            <span class="block text-sm font-black text-slate-900 truncate">{{ Auth::user()->name }}</span>
+                            <span class="block text-[10px] font-bold text-slate-500 truncate uppercase">{{ Auth::user()->role }}</span>
                         </div>
                     </div>
                 </div>
