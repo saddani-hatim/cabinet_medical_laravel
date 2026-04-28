@@ -21,6 +21,7 @@
 - [📦 Installation](#-installation)
 - [⚙️ Configuration](#️-configuration)
 - [🎯 Utilisation](#-utilisation)
+- [🌐 API REST](#-api-rest)
 - [🗄️ Schéma de Base de Données](#️-schéma-de-base-de-données)
 - [🔧 Technologies](#-technologies)
 - [🤝 Contribution](#-contribution)
@@ -227,6 +228,45 @@ Inscription Patient → Sélection Service → Assignation Médecin → Sélecti
 ```
 Connexion Admin → Panneau Services → Ajouter/Modifier Service → Définir Tarif & Durée → Sauvegarder
 ```
+
+---
+
+## 🌐 API REST
+
+L'application expose des points de terminaison API pour l'intégration avec des systèmes externes. Tous les points de terminaison API sont préfixés par `/api`.
+
+### 📅 Rendez-vous
+
+#### Lister les rendez-vous
+Retourne la liste complète des rendez-vous au format JSON.
+- **URL** : `/api/appointments`
+- **Méthode** : `GET`
+- **Réponse de succès** : `200 OK`
+- **Format** : JSON
+
+#### Créer un rendez-vous
+Permet la création d'un nouveau rendez-vous via une requête externe.
+- **URL** : `/api/appointments`
+- **Méthode** : `POST`
+- **Corps de la requête** :
+  ```json
+  {
+    "patient_id": 1,
+    "doctor_id": 2,
+    "service_id": 1,
+    "appointment_date": "2024-05-01 10:00:00",
+    "notes": "Note optionnelle"
+  }
+  ```
+- **Réponse de succès** : `201 Created`
+
+### 👤 Utilisateur (Authentifié)
+
+#### Récupérer l'utilisateur actuel
+Retourne les informations de l'utilisateur authentifié via Sanctum.
+- **URL** : `/api/user`
+- **Méthode** : `GET`
+- **Authentification** : `Bearer Token` (Sanctum)
 
 ---
 
